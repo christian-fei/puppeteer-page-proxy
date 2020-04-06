@@ -33,7 +33,7 @@ const pageProxy = async (param, proxy) => {
             const res = await request(req.url(), options);
             await req.respond(res);
         } catch(error) {
-            await req.abort();
+            await req.abort().catch(Function.prototype)
         }
     };
     const removeRequestListener = () => {
